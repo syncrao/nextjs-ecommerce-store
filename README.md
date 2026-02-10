@@ -72,8 +72,6 @@ lib/
 ## ⚙️ Installation & Setup
 
 ```bash
-git clone https://github.com/your-username/nextjs-clothing-ecommerce.git
-cd nextjs-clothing-ecommerce
 npm install
 npm run dev
 ````
