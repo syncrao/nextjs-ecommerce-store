@@ -1,41 +1,45 @@
 @import "tailwindcss";
 
-/* 🌍 Base layer: global variables + body */
-@layer base {
-  :root {
-    --bg-app: linear-gradient(135deg, #ffffff, #f5f6f8, #eff6ff);
-    --bg-hero: linear-gradient(90deg, #ffffff, #eff6ff, #fce7f3);
-    --bg-section: linear-gradient(180deg, #f5f6f8, #ffffff);
+@theme {
+  --color-brand: #0b0b0b;
+  --color-brand-hover: #1a1a1a;
 
-    --btn-primary: linear-gradient(90deg, #22c55e, #3b82f6);
-    --badge-sale: linear-gradient(90deg, #f472b6, #60a5fa);
-  }
+  --color-accent: #c6a972;
+  --color-accent-hover: #d4b483;
 
-  body {
-    background: var(--bg-app);
-    color: #111827;
-  }
+  --color-bg: #ffffff;
+  --color-surface: #fafafa;
+  --color-section: #f5f5f5;
+
+  --color-text: #111111;
+  --color-text-muted: #6b6b6b;
+  --color-text-inverse: #ffffff;
+
+  --color-border: #e5e5e5;
+
+  --color-success: #16a34a;
+  --color-error: #dc2626;
+  --color-warning: #f59e0b;
 }
 
-/* 🧩 Components layer: reusable classes */
-@layer components {
-  .bg-app {
-    background: var(--bg-app);
-  }
+.dark {
+  --color-brand: #ffffff;
+  --color-brand-hover: #e5e5e5;
 
-  .bg-hero {
-    background: var(--bg-hero);
-  }
+  --color-accent: #c6a972;
+  --color-accent-hover: #d4b483;
 
-  .bg-section {
-    background: var(--bg-section);
-  }
+  --color-bg: #0b0b0b;
+  --color-surface: #111111;
+  --color-section: #171717;
 
-  .bg-btn-primary {
-    background: var(--btn-primary);
-  }
+  --color-text: #f9f9f9;
+  --color-text-muted: #a3a3a3;
+  --color-text-inverse: #000000;
 
-  .bg-badge-sale {
-    background: var(--badge-sale);
-  }
+  --color-border: #262626;
+
+  --color-success: #22c55e;
+  --color-error: #ef4444;
+  --color-warning: #fbbf24;
 }
