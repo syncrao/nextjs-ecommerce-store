@@ -1,0 +1,28 @@
+table > thead > tr > th,
+table > tbody > tr > td {
+  @apply py-3 px-4 text-sm;
+}
+
+.datatables table thead tr th {
+  @apply bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white font-semibold;
+}
+
+.datatables table tbody tr {
+  @apply bg-white dark:bg-black;
+}
+
+.datatables table tbody tr td {
+  @apply border-0;
+}
+
+.datatables table {
+  @apply text-black dark:text-white;
+}
+
+.mantine-Table-root[data-hover] tbody tr:hover {
+  @apply bg-gray-200/30 dark:bg-gray-800/40;
+}
+
+.mantine-Checkbox-body {
+  @apply grid h-5 w-5 place-content-center overflow-hidden rounded bg-transparent;
+}

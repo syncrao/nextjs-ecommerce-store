@@ -1,4 +1,9 @@
 @import "tailwindcss";
+@import "./styles/datatables.css";
+
+.panel {
+  @apply relative rounded-md bg-white p-5 shadow dark:bg-black;
+}
 
 @theme {
   --color-brand: #0b0b0b;

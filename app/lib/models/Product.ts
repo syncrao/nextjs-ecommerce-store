@@ -1,12 +1,18 @@
 import mongoose, { Schema, models } from "mongoose";
 
+const ImageSchema = new Schema({
+  url: { type: String, required: true },
+  public_id: { type: String, required: true },
+  alt: { type: String },
+});
+
 const ProductSchema = new Schema(
   {
     name: { type: String, required: true },
     description: { type: String },
     price: { type: Number, required: true },
-    images: [String],
-    category: { type: String }
+    images: [ImageSchema],
+    category: { type: String },
   },
   { timestamps: true }
 );

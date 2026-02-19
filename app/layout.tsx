@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+
+import "@mantine/core/styles.css";
+import "mantine-datatable/styles.css";
+import { MantineProvider } from "@mantine/core";
+
 import Providers from "./providers";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
@@ -28,11 +33,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-bg relative`}
       >
-        <Providers>
-          <Header />
-          {children}
-          <Footer />
-        </Providers>
+        <MantineProvider>
+          <Providers>
+            <Header />
+            {children}
+            <Footer />
+          </Providers>
+        </MantineProvider>
       </body>
     </html>
   );

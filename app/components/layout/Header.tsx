@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { UserRound, Search, ShoppingCart, TextAlignStart } from "lucide-react";
+import Link from "next/link";
 import Menubar from "./MenuBar";
 
 const Header = () => {
@@ -23,10 +24,13 @@ const Header = () => {
             >
               <TextAlignStart className="text-text h-10 w-10  p-2 rounded-full border border-border" />
             </button>
+            <Link href="/">
+          
             <div>
               <h1 className="text-xl font-bold text-accent">BIKANERI</h1>
               <p className="text-xs text-text-muted">BANDHEJ HOUSE</p>
             </div>
+              </Link>
           </div>
 
           <div className="flex items-cemter space-x-4">
@@ -41,9 +45,11 @@ const Header = () => {
             <div className=" flex items-center rounded-xl hover:scale-105 transition-all duration-300">
               <ShoppingCart className="h-9" />
             </div>
+            <Link href="/admin">
             <div className=" flex items-center rounded-xl hover:scale-105 transition-all duration-300">
               <UserRound className="h-9" />
             </div>
+            </Link>
           </div>
         </div>
       </div>
