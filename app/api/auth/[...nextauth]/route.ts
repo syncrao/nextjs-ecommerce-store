@@ -3,7 +3,10 @@ import GoogleProvider from "next-auth/providers/google";
 import { MongoDBAdapter } from "@next-auth/mongodb-adapter";
 import clientPromise from "../../../lib/mongodb";
 
-const handler = NextAuth({
+const adminEmails = process.env.ADMIN_EMAILS?.split(",") || [];
+
+// ✅ EXPORT THIS
+export const authOptions = {
   adapter: MongoDBAdapter(clientPromise),
 
   providers: [
@@ -13,7 +16,18 @@ const handler = NextAuth({
     }),
   ],
 
+  callbacks: {
+    async session({ session }) {
+      if (session.user?.email) {
+        session.user.isAdmin = adminEmails.includes(session.user.email);
+      }
+      return session;
+    },
+  },
+
   secret: process.env.NEXTAUTH_SECRET,
-});
+};
+
+const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST };

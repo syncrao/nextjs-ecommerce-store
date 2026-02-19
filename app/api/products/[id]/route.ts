@@ -1,11 +1,18 @@
 import { NextResponse } from "next/server";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import connectDB from "../../../lib/db";
 import Product from "../../../lib/models/Product";
 
 
-export async function GET(req: Request, context: { params: Promise<{ id: string }> }) {
+
+export async function GET(
+  req: Request,
+  context: { params: Promise<{ id: string }> },
+) {
   const { id } = await context.params;
   await connectDB();
+
   const product = await Product.findById(id);
 
   if (!product) {
@@ -15,10 +22,22 @@ export async function GET(req: Request, context: { params: Promise<{ id: string 
   return NextResponse.json(product);
 }
 
-export async function PUT( req: Request, context: { params: Promise<{ id: string }> } ) {
+
+export async function PUT(
+  req: Request,
+  context: { params: Promise<{ id: string }> },
+) {
+  const session = await getServerSession(authOptions);
+
+  if (!session?.user?.isAdmin) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 403 });
+  }
+
   const { id } = await context.params;
   const body = await req.json();
+
   await connectDB();
+
   const product = await Product.findByIdAndUpdate(id, body, { new: true });
 
   if (!product) {
@@ -29,9 +48,20 @@ export async function PUT( req: Request, context: { params: Promise<{ id: string
 }
 
 
-export async function DELETE( req: Request, context: { params: Promise<{ id: string }> } ) {
+export async function DELETE(
+  req: Request,
+  context: { params: Promise<{ id: string }> },
+) {
+  const session = await getServerSession(authOptions);
+
+  if (!session?.user?.isAdmin) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 403 });
+  }
+
   const { id } = await context.params;
+
   await connectDB();
+
   const product = await Product.findByIdAndDelete(id);
 
   if (!product) {
