@@ -14,6 +14,8 @@ type Products = {
 };
 
 const Products = () => {
+
+  console.log("Products page rendered");
   const [products, setProducts] = useState<Products[]>([]);
 
   useEffect(() => {

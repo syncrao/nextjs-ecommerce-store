@@ -10,6 +10,7 @@ interface Product {
 }
 
 const ProductsCard = () => {
+  console.log("ProductsCard component rendered");
   const [data, setData] = useState<Product[]>([]);
   const [error, setError] = useState();
 

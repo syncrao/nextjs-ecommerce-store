@@ -23,6 +23,7 @@ interface Props {
 }
 
 export default function ProductForm({ initialData }: Props) {
+  console.log("ProductForm component rendered");
   const [product, setProduct] = useState<ProductType>({
     name: "",
     description: "",

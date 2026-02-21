@@ -43,6 +43,8 @@ export default function ProductCategory({
   category: string;
   loading: boolean;
 }) {
+
+  console.log("ProductCategory component rendered");
   const getDiscount = (mrp: number, price: number) =>
     Math.round(((mrp - price) / mrp) * 100);
 
@@ -69,7 +71,7 @@ export default function ProductCategory({
             ))
           : items.slice(0, 4).map((item) => (
               <Link
-                href={`/product/${item._id}`}
+                href={`/products/${item._id}`}
                 key={item._id}
                 className="rounded-lg transition relative group bg-surface p-3 hover:shadow-md"
               >

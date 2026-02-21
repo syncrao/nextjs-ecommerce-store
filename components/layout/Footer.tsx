@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Facebook, Instagram, Twitter } from "lucide-react";
 
 export default function Footer() {
+  console.log("Footer component rendered");
   return (
     <footer className="relative bg-section border-t border-border text-text-muted overflow-hidden">
 

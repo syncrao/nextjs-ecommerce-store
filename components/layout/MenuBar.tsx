@@ -9,6 +9,7 @@ interface MenuProps {
 }
 
 export default function Menubar({sidebarOpen, setSidebarOpen, activeTab, setActiveTab, }:MenuProps) {
+  console.log("Menubar component rendered");
   return (
     <div
       className={`${

@@ -5,6 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function HomeHero() {
+
+  console.log("HomeHero component rendered");
   const desktopImages = [
     "/hero/desktop1.jpg",
     "/hero/desktop2.jpg",

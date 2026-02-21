@@ -7,8 +7,8 @@ import "mantine-datatable/styles.css";
 import { MantineProvider } from "@mantine/core";
 
 import Providers from "./providers";
-import Header from "./components/layout/Header";
-import Footer from "./components/layout/Footer";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

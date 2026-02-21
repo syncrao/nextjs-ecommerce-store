@@ -13,6 +13,7 @@ interface Product {
 }
 
 export default function ProductsTable() {
+  console.log("ProductsTable component rendered");
   const [records, setRecords] = useState<Product[]>([]);
   const [page, setPage] = useState(1);
   const PAGE_SIZE = 5;

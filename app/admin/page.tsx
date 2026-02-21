@@ -2,6 +2,7 @@ import Link from "next/link"
 
 
 const Admin = () => {
+  console.log("Admin page rendered");
   return (
     <div className="p-6">
       <h1>Admin</h1>

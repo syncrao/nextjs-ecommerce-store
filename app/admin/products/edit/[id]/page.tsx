@@ -1,6 +1,6 @@
 "use client";
 
-import ProductForm from "@/app/components/admin/ProductForm";
+import ProductForm from "@/components/admin/ProductForm";
 import { fetcher } from "@/app/lib/fetcher";
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
@@ -21,6 +21,7 @@ interface ProductType {
 }
 
 export default function ProductEditClient() {
+  console.log("ProductEditClient component rendered");
   const params = useParams(); 
   const [product, setProduct] = useState<ProductType | null>(null);
   const [loading, setLoading] = useState(true);
