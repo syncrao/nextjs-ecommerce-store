@@ -1,5 +1,6 @@
 "use client";
 
+import CheckoutButton from "@/components/CheckoutButton";
 import { useCartStore } from "@/stores/cartStore";
 
 export default function CartPage() {
@@ -37,6 +38,7 @@ export default function CartPage() {
 
       <h2>Total Price: {totalPrice}</h2>
       <button onClick={clearCart}>Clear Cart</button>
+      <CheckoutButton />
     </div>
-  );
+  )
 }
